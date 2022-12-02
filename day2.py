@@ -10,6 +10,7 @@ SAMPLE_INPUT = ["A Y", "B X", "C Z"]
 
 
 # Unicode hacks lul
+# 65-90 = A-Z
 
 
 def part1(lines):
