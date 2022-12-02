@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 try:
-    with open("input.txt", "r") as f:
+    with open("day1.txt", "r") as f:
         input_file = f.read()
 except FileNotFoundError:
     exit("Input file not found")
