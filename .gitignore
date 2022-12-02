@@ -133,3 +133,5 @@ dmypy.json
 
 # input from AOC
 input.txt
+*.txt
+
