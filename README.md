@@ -7,4 +7,4 @@ Testing with doctest
 
 Inputs: day[\d]*.txt
 
-Answers: day[\d].py
+Answers: day[\d]*.py
