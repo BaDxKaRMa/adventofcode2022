@@ -8,6 +8,7 @@ except FileNotFoundError:
 
 SAMPLE_INPUT = ["A Y", "B X", "C Z"]
 
+
 # Unicode hacks lul
 
 
@@ -18,7 +19,7 @@ def part1(lines):
     """
     return sum(
         ((p2 - p1 + 1) % 3) * 3 + p2
-        for (p1, p2) in ((ord(l[0]) - 64, ord(l[2]) - 87) for l in lines)
+        for (p1, p2) in ((ord(line[0]) - 64, ord(line[2]) - 87) for line in lines)
     )
 
 
@@ -29,7 +30,7 @@ def part2(lines):
     """
     return sum(
         win * 3 + (p1 + win - 2) % 3 + 1
-        for (p1, win) in ((ord(l[0]) - 64, ord(l[2]) - 88) for l in lines)
+        for (p1, win) in ((ord(line[0]) - 64, ord(line[2]) - 88) for line in lines)
     )
 
 
