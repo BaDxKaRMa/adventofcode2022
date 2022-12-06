@@ -57,4 +57,9 @@ def part2(lines):
 parts = (part1, part2)
 
 for i, part in enumerate(parts, 1):
-    print(f"Part {i}: {part(input_file.splitlines())}")
+    if input_file:
+        print(f"Part {i}: {part(input_file.splitlines())}")
+    else:
+        import doctest
+
+        doctest.testmod()
