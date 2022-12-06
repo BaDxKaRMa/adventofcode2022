@@ -30,6 +30,11 @@ def decode(input_string, window) -> int:
             return i + window
 
 
+def test_decode():
+    decode(SAMPLE_INPUT[0], 4)
+    assert decode(line, 4) == 7
+
+
 if __name__ == "__main__":
     parts = {"part1": 4, "part2": 14}
 
