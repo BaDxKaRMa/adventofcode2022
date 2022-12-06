@@ -10,7 +10,6 @@ def _parse_into_list(file) -> list:
             return input_file
     except FileNotFoundError:
         print("File not found")
-        sys.exit(1)
 
 
 if __name__ == "__main__":

@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-
 from utils import _parse_into_list
 from re import match, compile
 
@@ -28,18 +27,17 @@ def compare_ranges(lines):
     return part1, part2
 
 
-_PATTERN = compile(r"(\d+)-(\d+),(\d+)-(\d+)")
-p1, p2 = 0, 0
-for line in _parse_into_list("day4.txt"):
-    start1, end1, start2, end2 = map(int, match(_PATTERN, line).groups())
-    if start1 <= start2 and end1 >= end2 or start1 >= start2 and end1 <= end2:
-        p1 += 1
-    if start1 <= end2 and end1 >= start2:
-        p2 += 1
-print(f"Regex why not Part 1: {p1}")
-print(f"Regex why not Part 2: {p2}")
+def test_compare_ranges():
+    assert compare_ranges(SAMPLE_INPUT) == (2, 4)
 
-part1, part2 = compare_ranges(_parse_into_list("day4.txt"))
+
+try:
+    with open("day4.txt") as f:
+        INPUT = f.read().splitlines()
+except FileNotFoundError:
+    INPUT = SAMPLE_INPUT
+
+part1, part2 = compare_ranges(INPUT)
 
 print(f"Part 1: {part1}")
 print(f"Part 2: {part2}")
