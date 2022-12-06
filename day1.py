@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
 
-try:
-    with open("day1.txt", "r") as f:
-        input_file = f.read()
-except FileNotFoundError:
-    exit("Input file not found")
-
 SAMPLE_INPUT = [
     "1000",
     "2000",
@@ -22,6 +16,12 @@ SAMPLE_INPUT = [
     "",
     "10000",
 ]
+
+try:
+    with open("day1.txt", "r") as f:
+        input_file = f.read().splitlines()
+except FileNotFoundError:
+    input_file = SAMPLE_INPUT
 
 
 def _parse(lines):
@@ -57,9 +57,4 @@ def part2(lines):
 parts = (part1, part2)
 
 for i, part in enumerate(parts, 1):
-    if input_file:
-        print(f"Part {i}: {part(input_file.splitlines())}")
-    else:
-        import doctest
-
-        doctest.testmod()
+    print(f"Part {i}: {part(input_file)}")
