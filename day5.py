@@ -34,10 +34,16 @@ def run(lines, part):
     return stacks
 
 
-run(open("day5.txt"), 1)
+try:
+    run(open("day5.txt"), 1)
+except FileNotFoundError:
+    run(SAMPLE_INPUT, 1)
 print("Part 1:", "".join(stacks[i][0] for i in range(len(stacks))))
 
 stacks = defaultdict(list)
 
-run(open("day5.txt"), 2)
+try:
+    run(open("day5.txt"), 2)
+except FileNotFoundError:
+    run(SAMPLE_INPUT, 2)
 print("Part 2:", "".join(stacks[i][0] for i in range(len(stacks))))
