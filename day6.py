@@ -32,7 +32,7 @@ def decode(input_string, window) -> int:
 
 def test_decode():
     decode(SAMPLE_INPUT[0], 4)
-    assert decode(line, 4) == 7
+    assert decode(SAMPLE_INPUT[0], 4) == 7
 
 
 if __name__ == "__main__":
