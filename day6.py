@@ -16,15 +16,6 @@ except FileNotFoundError:
 
 
 def decode(input_string, window) -> int:
-    """
-    >>> for line in SAMPLE_INPUT:
-    ...     decode(line, 4)
-    7
-    5
-    6
-    10
-    11
-    """
     for i in range(len(input_string) - window - 1):
         if len(set(input_string[i : i + window])) == window:
             return i + window
