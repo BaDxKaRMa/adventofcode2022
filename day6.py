@@ -15,7 +15,7 @@ except FileNotFoundError:
     INPUT = SAMPLE_INPUT
 
 
-def decode(input_string, size) -> int:
+def decode(input_string, window) -> int:
     """
     >>> for line in SAMPLE_INPUT:
     ...     decode(line, 4)
@@ -25,9 +25,9 @@ def decode(input_string, size) -> int:
     10
     11
     """
-    for i in range(len(input_string) - size - 1):
-        if len(set(input_string[i : i + size])) == size:
-            return i + size
+    for i in range(len(input_string) - window - 1):
+        if len(set(input_string[i : i + window])) == window:
+            return i + window
 
 
 if __name__ == "__main__":
