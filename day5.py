@@ -19,10 +19,6 @@ stacks = defaultdict(list)
 
 
 def run(lines, part):
-    """
-    >>> run(SAMPLE_INPUT, 1)
-    defaultdict(<class 'list'>, {1: ['C', 'M'], 0: ['D', 'Z'], 2: ['N', 'M', 'C', 'D', 'N', 'Z', 'P', 'P']})
-    """
     for line in lines:
         if "[" in line:
             for i in range(1, len(line) - 1, 4):
@@ -40,7 +36,7 @@ def run(lines, part):
 
 def test_run():
     run(SAMPLE_INPUT, 1)
-    assert "".join(stacks[i][0] for i in range(len(stacks))) == "MDZ"
+    assert "".join(stacks[i][0] for i in range(len(stacks))) == "DCN"
 
 
 try:
