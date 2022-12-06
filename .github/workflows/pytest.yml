@@ -1,4 +1,4 @@
-name: Python package
+name: Pytest
 
 on: [push]
 
@@ -29,4 +29,7 @@ jobs:
           flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
       - name: Test with pytest
         run: |
-          pytest
+          for file in $(find . -name "day*.py"); do
+            echo "Testing $file"
+            pytest $file --doctest-modules
+          done
