@@ -19,7 +19,6 @@ def _parse_into_list(file) -> list:
             return input_file
     except FileNotFoundError:
         print("File not found")
-        sys.exit(1)
 
 
 def _score(item):
@@ -57,4 +56,9 @@ def part2(lines):
 parts = (part1, part2)
 
 for i, part in enumerate(parts, 1):
-    print(f"Part {i}: {part(_parse_into_list('day3.txt'))}")
+    try:
+        print(f"Part {i}: {part(_parse_into_list('day3.txt'))}")
+    except TypeError:
+        import doctest
+
+        doctest.testmod()
