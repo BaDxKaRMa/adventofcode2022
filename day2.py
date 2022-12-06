@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
-try:
-    with open("day2.txt", "r") as f:
-        input_file = f.read()
-except FileNotFoundError:
-    exit("Input file not found")
 
 SAMPLE_INPUT = ["A Y", "B X", "C Z"]
 
+try:
+    with open("day2.txt", "r") as f:
+        input_file = f.read().splitlines()
+except FileNotFoundError:
+    input_file = SAMPLE_INPUT
 
 # Unicode hacks lul
 # 65-90 = A-Z
@@ -38,4 +38,4 @@ def part2(lines):
 parts = (part1, part2)
 
 for i, part in enumerate(parts, 1):
-    print(f"Part {i}: {part(input_file.splitlines())}")
+    print(f"Part {i}: {part(input_file)}")
