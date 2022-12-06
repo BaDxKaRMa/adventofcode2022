@@ -8,3 +8,5 @@ Testing with doctest
 Inputs: day[\d]*.txt
 
 Answers: day[\d]*.py
+
+<!--- advent_readme_stars table --->
