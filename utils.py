@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import sys
 
 
 def _parse_into_list(file) -> list:
