@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 
 import numpy as np
+import os
 
-try:
-    with open("day8.txt") as f:
-        data = f.read().splitlines()
-except FileNotFoundError:
-    print("Input file not found")
-
-SAMPLE_INPUT = """
-30373
+SAMPLE_INPUT = """30373
 25512
 65332
 33549
 35390
 """
 
-grid = np.array([list(x.strip()) for x in open("day8.txt")], int)
+if not os.path.exists("day8.txt"):
+    print([list(x.strip()) for x in SAMPLE_INPUT.splitlines()])
+    grid = np.array([list(x.strip()) for x in SAMPLE_INPUT.splitlines()], int)
+else:
+    with open("day8.txt") as f:
+        grid = np.array([list(x.strip()) for x in f], int)
+
 part1 = np.zeros_like(grid, int)
 part2 = np.ones_like(grid, int)
 
