@@ -20,7 +20,7 @@ offset = {"L": (-1, 0), "R": (1, 0), "U": (0, 1), "D": (0, -1)}
 
 
 def load_input():
-    if os.path.exists("day9.txt") or test == False:
+    if os.path.exists("day9.txt"):
         with open(os.path.join(os.path.dirname(__file__), "day9.txt")) as f:
             input_data = f.read().splitlines()
             logger.debug(f"Loaded day9.txt: {input_data}")
@@ -83,6 +83,10 @@ def part2():
                 second_tracker.add(rope[-1])
                 logger.debug(f"Added {cx}, {cy} to second tracker")
     return len(second_tracker)
+
+
+def test():
+    pass
 
 
 if __name__ == "__main__":
