@@ -33,3 +33,7 @@ for _ in range(4):
 
 print(f"Part 1: {part1.sum()}")
 print(f"Part 2: {part2.max()}")
+
+
+def test_placeholder():
+    pass
