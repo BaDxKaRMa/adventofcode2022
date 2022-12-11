@@ -97,6 +97,10 @@ def parse_input(data: str) -> dict[int, Monkey]:
     return monkeys
 
 
+def test_fake():
+    pass
+
+
 if __name__ == "__main__":
     with open(INPUT_FILE, mode="r") as f:
         data = f.read()
