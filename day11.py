@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# Advent of Code 2022 - Day 11
 from __future__ import annotations
 
 import operator
