@@ -27,6 +27,13 @@ def parse_args():
         required=False,
         help="Enable debug logging",
     )
+    parser.add_argument(
+        "--test",
+        action="store_true",
+        default=False,
+        required=False,
+        help="Run tests",
+    )
     return parser.parse_args()
 
 
