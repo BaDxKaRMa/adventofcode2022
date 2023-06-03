@@ -100,6 +100,7 @@ def exposed(pos):
 
 def part2(lines, min_coord, max_coord):
     part2_answer = 0
+    cache = {}
 
     for x, y, z in lines:
         for num in [x, y, z]:
@@ -119,9 +120,14 @@ def part2(lines, min_coord, max_coord):
             dneg[coord] = -1
 
             for nbr in [tuple(pos + dpos), tuple(pos + dneg)]:
-                part2_answer += exposed(nbr)
-    return part2_answer
+                if nbr in cache:
+                    part2_answer += cache[nbr]
+                else:
+                    result = exposed(nbr)
+                    cache[nbr] = result
+                    part2_answer += result
 
+    return part2_answer
 
 parsed_lines, min_coord, max_coord = parse_lines(lines)
 print(f"Part 1: {part1(parsed_lines)}")
